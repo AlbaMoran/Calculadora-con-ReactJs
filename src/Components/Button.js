@@ -2,16 +2,16 @@ import React from 'react';
 
 function Button(props) {
 
-    const esOperador = (valor)=>{
+    const isOperator = (val)=>{
 
-    return isNaN(valor) && (valor !== '.') && (valor !== '=')
+    return isNaN(val) && (val !== '.') && (val !== '=')
 };
 
 
 
 return (
-        <div className={`boton-contenedor ${esOperador(props.children) ? 'operador': ''}`.trimEnd()}
-        onClick={()=> props.manejarClic(props.children)}> 
+        <div className={`button-container ${isOperator(props.children) ? 'operator': ''}`.trimEnd()}
+        onClick={()=> props.actionClic(props.children)}> 
             {props.children}
         </div>
 
